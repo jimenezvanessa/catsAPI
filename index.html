@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cats api - fetch cat images</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cats-container">
+        <header class="cats-header">
+            <div class="cats-header-content">
+                <h1 class="cats-title">
+                    cat images fetcher
+                </h1>
+            </div>
+        </header>
+
+        <main class="cats-main">
+            <div class="cats-search-section">
+                <div class="cats-controls-row">
+                    <div class="cats-control-group">
+                        <label for="catsBreedSelect" class="cats-label">
+                            filter by breed
+                        </label>
+                        <select id="catsBreedSelect" class="cats-select">
+                            <option value="">all breeds</option>
+                        </select>
+                    </div>
+                    <div class="cats-control-group">
+                        <label for="catsLimitSelect" class="cats-label">
+                            number of images
+                        </label>
+                        <select id="catsLimitSelect" class="cats-select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10" selected>10</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cats-buttons">
+                    <button type="button" id="catsFetchBtn" class="cats-btn cats-btn-primary">
+                        <span class="cats-btn-text">fetch cats</span>
+                        <span class="cats-btn-spinner">loading...</span>
+                    </button>
+                    <button type="button" id="catsClearBtn" class="cats-btn cats-btn-secondary">
+                        <span class="cats-btn-text">clear</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="cats-status-bar">
+                <div class="cats-status-left">
+                    <span class="cats-status-badge" id="catsStatusBadge">
+                        <span id="catsStatusText">ready</span>
+                    </span>
+                </div>
+                <div class="cats-status-right">
+                    <span class="cats-count" id="catsCountText">0 results</span>
+                </div>
+            </div>
+
+            <div class="cats-error-box" id="catsErrorBox" role="alert"></div>
+
+            <div class="cats-results-section">
+                <div class="cats-grid" id="catsGrid"></div>
+            </div>
+        </main>
+
+        <footer class="cats-footer">
+            <div class="cats-footer-content">
+                <p>
+                    credits: <a href="https://thecatapi.com/" target="_blank" rel="noreferrer">thecatapi</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
